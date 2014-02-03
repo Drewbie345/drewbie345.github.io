@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Fat Cat Studio]]></title>
+  <link href="http://fatcatstudio.org/atom.xml" rel="self"/>
+  <link href="http://fatcatstudio.org/"/>
+  <updated>2014-02-03T17:34:52-06:00</updated>
+  <id>http://fatcatstudio.org/</id>
+  <author>
+    <name><![CDATA[Drew Robinson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World!]]></title>
+    <link href="http://fatcatstudio.org/blog/2014/02/03/hello/"/>
+    <updated>2014-02-03T17:33:41-06:00</updated>
+    <id>http://fatcatstudio.org/blog/2014/02/03/hello</id>
+    <content type="html"><![CDATA[<p>Welcome to my grand adventure! Let&rsquo;s see where we go from here!</p>
+]]></content>
+  </entry>
+  
+</feed>
