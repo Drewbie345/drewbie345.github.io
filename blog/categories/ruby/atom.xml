@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Fat Cat Studio]]></title>
-  <link href="http://Drewbie345.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Ruby | Fat Cat Studio]]></title>
+  <link href="http://Drewbie345.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://Drewbie345.github.io/"/>
   <updated>2014-02-04T20:35:27-06:00</updated>
   <id>http://Drewbie345.github.io/</id>
@@ -87,16 +87,7 @@ Opals
 
 <p>Okay, that&rsquo;s all I got for today. More soon!</p>
 
-<p><img src="http://Drewbie345.github.io/images/kitty.jpg" alt="alt text" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://Drewbie345.github.io/blog/2014/02/03/hello/"/>
-    <updated>2014-02-03T17:33:41-06:00</updated>
-    <id>http://Drewbie345.github.io/blog/2014/02/03/hello</id>
-    <content type="html"><![CDATA[<p>Welcome to my grand adventure! Let&rsquo;s see where we go from here!</p>
+<p><img src="/images/kitty.jpg" alt="alt text" /></p>
 ]]></content>
   </entry>
   
