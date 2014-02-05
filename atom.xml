@@ -4,7 +4,7 @@
   <title><![CDATA[Fat Cat Studio]]></title>
   <link href="http://Drewbie345.github.io/atom.xml" rel="self"/>
   <link href="http://Drewbie345.github.io/"/>
-  <updated>2014-02-04T20:35:27-06:00</updated>
+  <updated>2014-02-05T08:57:55-06:00</updated>
   <id>http://Drewbie345.github.io/</id>
   <author>
     <name><![CDATA[Drew Robinson]]></name>
@@ -83,7 +83,7 @@ Opals
 
 <p>Interesting, right? The <code>capitalized_cat</code> is actually a copy of the string in the original <code>cat</code>. The original string doesn&rsquo;t change. However, when you use the exclamation point, it changes the original <code>kitty</code> as well as creates the <code>capitalized_kitty</code>.</p>
 
-<p>Too cool. The key is knowing your end goal and then findind the method that will get you there. I originally thought that <code>.each</code> and <code>.map</code> could be used interchangeably and while sometimes they can be&hellip;they can actually have two different end results.</p>
+<p>Too cool. The key is knowing your end goal and then finding the method that will get you there. I originally thought that <code>.each</code> and <code>.map</code> could be used interchangeably and while sometimes they can be&hellip;they can actually have two different end results.</p>
 
 <p>Okay, that&rsquo;s all I got for today. More soon!</p>
 
