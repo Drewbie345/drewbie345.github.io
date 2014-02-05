@@ -1,0 +1,75 @@
+---
+layout: post
+title: "Day 1: The Adventure Begins!"
+date: 2014-02-04 19:01:41 -0600
+comments: true
+categories: [ruby, tutorial]
+---
+Each vs. Map
+-------------
+
+Well, Day 1 is officially winding down and I already feel like I'm on more solid ground with the basics of Ruby than I was when I was working alone in Tulsa.
+
+So, with that in mind, I wanted to share a few bits of knowledge that I gathered today. 
+
+One of the big *aha* moments for me today was the difference in end results that you get when using **Array#each** versus **Array#map**.   
+
+Let's take a look at a bit of code...In this particular example, I've created an array containing the names of my beloved cats.
+
+`array_of_cats = ["amigo", "sly", "sway", "aj", "lil bit", "opals"]`
+
+Okay, my goal is to *iterate* through each element of my array and capitalize the first letter... (FYI: *iterate* is the fancy way of saying loop) So, what to use? Well that all depends on what you want the end result to look like.
+
+`array_of_cats.each { |cat| puts "#{cat.capitalize}" }`
+
+The above code will print a list of the cats with the first letter capitalized:
+
+    Amigo
+    Sly
+    Sway
+    Aj
+    Lil bit
+    Opals
+
+But what happens to the actual `array_of_cats`?
+
+Well, not much really. When you run `array_of_cats` again, the output hasn't changed.
+
+    ["amigo", "sly", "sway", "aj", "lil bit", "opals"]
+
+Okay, so now what? What does that mean? It printed out the words capitalized but it's like the code didn't stick to the actual array or something strange (at least that's what I thought at first). Well, it turns out that `.each` executes the block of code but then returns the *original* array. 
+
+So we need something else. Take a look at the below code.
+
+`array_of_cats.map { |cat| cat.capitalize }`
+
+    ["Amigo", "Sly", "Sway", "Aj", "Lil bit", "Opals"]
+
+Do you see the difference? The `.map` method executes the block of code and literally changes the original array. Map is used to iterate *but* also to map the elements to something else. Pretty cool, huh?
+
+Is that the only solution? As is generally the case with Ruby, the answer is no. Take a look at the code below.
+
+`array_of_cats.each { |cat| cat.capitalize! }`
+
+    ["Amigo", "Sly", "Sway", "Aj", "Lil bit", "Opals"]
+
+Hey! What happened there? In this case, `.each` actually did change the original array...What did we do different? Suprisingly, it's the exclamation point that makes all the difference. Check it out...
+
+`cat = "meow"` <br />
+`capitalized_cat = cat.capitalize`   
+`puts cat 	#prints unchanged cat or "meow"` <br />
+`puts capitalized_cat	#prints newly created capitalized_cat or "Meow"` <br />
+
+`kitty = "meh"` <br />
+`capitalized_kitty = kitty.capitalize!` <br />
+`puts kitty 	#prints "Meh"` <br />
+`puts capitalized_kitty 	#prints "Meh"` <br />
+
+Interesting, right? The `capitalized_cat` is actually a copy of the string in the original `cat`. The original string doesn't change. However, when you use the exclamation point, it changes the original `kitty` as well as creates the `capitalized_kitty`.
+
+Too cool. The key is knowing your end goal and then finding the method that will get you there. I originally thought that `.each` and `.map` could be used interchangeably and while sometimes they can be...they can actually have two different end results.
+
+Okay, that's all I got for today. More soon!
+
+![alt text](/images/kitty.jpg)
+
