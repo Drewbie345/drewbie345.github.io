@@ -4,7 +4,7 @@
   <title><![CDATA[Fat Cat Studio]]></title>
   <link href="http://Drewbie345.github.io/atom.xml" rel="self"/>
   <link href="http://Drewbie345.github.io/"/>
-  <updated>2014-02-05T08:57:55-06:00</updated>
+  <updated>2014-02-09T22:16:49-06:00</updated>
   <id>http://Drewbie345.github.io/</id>
   <author>
     <name><![CDATA[Drew Robinson]]></name>
@@ -12,6 +12,449 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Week 1 Wrap-Up!]]></title>
+    <link href="http://Drewbie345.github.io/blog/2014/02/09/week-1-wrap-up/"/>
+    <updated>2014-02-09T20:06:54-06:00</updated>
+    <id>http://Drewbie345.github.io/blog/2014/02/09/week-1-wrap-up</id>
+    <content type="html"><![CDATA[<h2>Rock, Paper, Scissors</h2>
+
+<p>It&rsquo;s Sunday evening and I&rsquo;m finally getting to sit down and really reflect on my first week at school. And my first thought is&hellip;has it really been just a week??</p>
+
+<p>So this weekend, I decided to try my hand at building a simple Rock, Paper, Scissors game. Inspired by an Ruby assignment earlier this week, I thought it would be fun to make a site where you could visually see and play Rock, Paper, Scissors.</p>
+
+<p>I also thought it would be a good review of the basics of JavaScript, since we&rsquo;ll be starting on that this week.</p>
+
+<p>The code below is actually the fourth revision and I&rsquo;m still not totally happy with it. But I figure as I get better in JavaScript, I&rsquo;ll be able to improve the code.</p>
+
+<p><img src="images/rps.png" alt="RPS Webpage" /></p>
+
+<p>If you want to try the game out yourself: <a href="http://fatcatstudio.org/rps/">Rock, Paper, Scissors</a>.</p>
+
+<p>We&rsquo;ll start with the HTML for the game. I used the <a href="http://foundation.zurb.com">Foundation CSS framework</a> to layout my page and JavaScript and <a href="http://jquery.com/">JQuery</a> to create the game. I&rsquo;ve included the head of my HTML document so that you can get a better idea of what I needed to include to get it to work.</p>
+
+<p>Tip: Make sure your JQuery file is above your script.js file in <code>&lt;head&gt;&lt;/head&gt;</code>, otherwise your page can act up.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;title&gt;</span>Rock Paper Scissors<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;normalize.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;foundation.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;style2.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;modernizr.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;script3.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Among other things, Foundation makes it super easy to set up a simple grid layout it just a few minutes. Having, in the past, written my CSS from scratch, it has taken a little time for me to let go of my control issues regarding this (well, I&rsquo;m <em>trying</em> to work on it!).</p>
+
+<p>I won&rsquo;t post the whole code here (feel free to take a look at the code on <a href="https://github.com/Drewbie345/rockpaperscissors">GitHub</a>). However, to give you an idea of how I named stuff, here&rsquo;s a snippet.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;large-6 columns&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;player-game-pieces&quot;</span> <span class="na">class=</span><span class="s">&quot;row bump&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small-2 large-4 columns&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">&quot;rock&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">&quot;rock1-p&quot;</span> <span class="na">src=</span><span class="s">&quot;rock.gif&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small-4 large-4 columns&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">&quot;paper&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">&quot;paper1-p&quot;</span> <span class="na">src=</span><span class="s">&quot;paper.png&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small-6 large-4 columns&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">&quot;scissors&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">&quot;scissors1-p&quot;</span> <span class="na">src=</span><span class="s">&quot;scissors.png&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, personally, I find it easier when I&rsquo;m using JQuery to give the important stuff meaningful ids. As you can see each image is contained within a link that goes nowhere but each image also gets an id so that later on I can add a border around the picture picked by the player. The code for the computer is similar except there&rsquo;s no need for the links since the computer&rsquo;s choice is artificially created.</p>
+
+<p>I did minimal styling but there are a couple of things I wanted to point out. There were a couple of <code>&lt;div&gt;</code> elements that I didn&rsquo;t want to display immediately when the page loaded&hellip;so I simple set <code>display: none</code>. Later on, with JavaScript, I will make them appear when they&rsquo;re needed.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;display-winner&quot;</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small-6 large-centered columns&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;who-won&quot;</span><span class="nt">&gt;</span>Placeholder Text!<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>              <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">&quot;play-again&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Play Again?<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nf">#display-winner</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Okay, now for a little JavaScript and JQuery. I started out by simply mapping out what I wanted my program to do. In my <code>script.js</code> file, I commented out each step of the game.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">// Player picks rock, paper, or scissors by clicking on that image.</span>
+</span><span class='line'><span class="c1">// Whatever image she picks, add a border around it to denote its selection.</span>
+</span><span class='line'><span class="c1">// Disable other image links.</span>
+</span><span class='line'><span class="c1">// Computer picks choice and border is added to computer&#39;s choice.</span>
+</span><span class='line'><span class="c1">// Player&#39;s choice and Computer&#39;s choice are compared.</span>
+</span><span class='line'><span class="c1">// Based on rules of game, determine a winner and display it.</span>
+</span><span class='line'><span class="c1">// Invite to play again, clear image borders and renable links.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I ended up deciding to create a player Object and a computer Object to hold my values. I also gave myself the ability to change the value with a method built into the Objects. (Sadly enough, this didn&rsquo;t occur to me until the fourth revision). Note: an Object is simply a special type of data with properties and methods. Properties are the values associated with an Object and methods are  actions that can be used on Objects.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+</span><span class='line'><span class="nx">player</span><span class="p">.</span><span class="nx">pick</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">player</span><span class="p">.</span><span class="nx">changePick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">choice</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">player</span><span class="p">.</span><span class="nx">pick</span> <span class="o">=</span> <span class="nx">choice</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">computer</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+</span><span class='line'><span class="nx">computer</span><span class="p">.</span><span class="nx">pick</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">computer</span><span class="p">.</span><span class="nx">changePick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">choice</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">computer</span><span class="p">.</span><span class="nx">pick</span> <span class="o">=</span> <span class="nx">choice</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Next I created two functions <code>updateComputer()</code> and <code>updatePlayer()</code> to change the values in my player and computer Objects. The <code>updatePlayer()</code> was really straightforward but the <code>updateComputer()</code> uses another function I created called <code>computerInput()</code> which randomly picks a value.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">updateComputer</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">ai</span> <span class="o">=</span> <span class="nx">computerInput</span><span class="p">();</span>
+</span><span class='line'>  <span class="nx">computer</span><span class="p">.</span><span class="nx">changePick</span><span class="p">(</span><span class="nx">ai</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">computerInput</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">randomNumber</span> <span class="o">=</span> <span class="nx">randInt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">computerChoice</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">switch</span><span class="p">(</span><span class="nx">randomNumber</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+</span><span class='line'>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock1-c&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;border-c&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">computerChoice</span> <span class="o">=</span> <span class="s2">&quot;rock&quot;</span><span class="p">;</span>
+</span><span class='line'>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock1-c&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;border-c&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+</span><span class='line'>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paper1-c&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;border-c&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">computerChoice</span> <span class="o">=</span> <span class="s2">&quot;paper&quot;</span><span class="p">;</span>
+</span><span class='line'>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paper1-c&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;border-c&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+</span><span class='line'>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#scissors1-c&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;border-c&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">computerChoice</span> <span class="o">=</span> <span class="s2">&quot;scissors&quot;</span><span class="p">;</span>
+</span><span class='line'>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#scissors1-c&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;border-c&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">computerChoice</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">randInt</span><span class="p">(</span><span class="nx">minVal</span><span class="p">,</span> <span class="nx">maxVal</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">rInt</span> <span class="o">=</span> <span class="nx">minVal</span> <span class="o">+</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">maxVal</span> <span class="o">-</span> <span class="nx">minVal</span><span class="p">));</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">rInt</span><span class="p">);</span>    
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Originally I used a if/else if/else statement but <em>switched</em> to a switch statement (I amuse myself). I&rsquo;m actually thinking about switching back to if/else if statement because I want to try not rounding my random number and see if I get more variety in the game that way (a problem for another day!). FYI: You can&rsquo;t use logical operators in a switch statement because a switch works by comparing what is in switch() to each case.</p>
+
+<p>Up next is a <code>determineWinner()</code> function that actually does the comparing between the player&rsquo;s choice and the computer&rsquo;s choice.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">determineWinner</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">play</span> <span class="o">=</span> <span class="nx">player</span><span class="p">.</span><span class="nx">pick</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">comp</span> <span class="o">=</span> <span class="nx">computer</span><span class="p">.</span><span class="nx">pick</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">winner</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">play</span> <span class="o">===</span> <span class="nx">comp</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">winner</span> <span class="o">=</span> <span class="s2">&quot;tie&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="nx">comp</span> <span class="o">===</span> <span class="s2">&quot;rock&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">play</span> <span class="o">===</span> <span class="s2">&quot;paper&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">winner</span> <span class="o">=</span> <span class="s2">&quot;player&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">comp</span> <span class="o">===</span> <span class="s2">&quot;rock&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">play</span> <span class="o">===</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">winner</span> <span class="o">=</span> <span class="s2">&quot;computer&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">comp</span> <span class="o">===</span> <span class="s2">&quot;paper&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">play</span> <span class="o">===</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">winner</span> <span class="o">=</span> <span class="s2">&quot;computer&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">comp</span> <span class="o">===</span> <span class="s2">&quot;paper&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">play</span> <span class="o">===</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">winner</span> <span class="o">=</span> <span class="s2">&quot;player&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">comp</span> <span class="o">===</span> <span class="s2">&quot;scissors&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">play</span> <span class="o">===</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">winner</span> <span class="o">=</span> <span class="s2">&quot;player&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">comp</span> <span class="o">===</span> <span class="s2">&quot;scissors&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">play</span> <span class="o">===</span> <span class="s2">&quot;paper&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">winner</span> <span class="o">=</span> <span class="s2">&quot;computer&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="s2">&quot;Error!&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">winner</span> <span class="o">===</span> <span class="s2">&quot;player&quot;</span> <span class="o">||</span> <span class="nx">winner</span> <span class="o">===</span> <span class="s2">&quot;computer&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#who-won&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;again&#39;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#who-won&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;The &quot;</span> <span class="o">+</span> <span class="nx">winner</span> <span class="o">+</span> <span class="s2">&quot; wins!&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#display-winner&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#who-won&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;again&#39;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#who-won&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;A Tie!&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#display-winner&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&rsquo;s really just a big if/else if statement. First, it checks to see if there is a tie and if there&rsquo;s not a tie then it works it&rsquo;s way down the list of possibilities until it finds one that matches. I&rsquo;m definitely interested in seeing if there are other ways to do this comparison but this is what I came up with for now. The last bit of this function actually displays the winner on the page. You&rsquo;ll see I used JQuery for this and removed classes and changed text as necessary.</p>
+
+<p>I wrote a couple of smaller functions to help me out with the image links.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">disableButtons</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock, #paper, #scissors&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;pick-choice&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#dare&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">enableButtons</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock, #paper, #scissors&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;pick-choice&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">clearButtons</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock1-p, #paper1-p, #scissors1-p&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;border-p&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock1-c, #paper1-c, #scissors1-c&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;border-c&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finally I was ready to perform some magic (not really but sometimes it feels like magic!).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+</span><span class='line'>      <span class="nx">updatePlayer</span><span class="p">(</span><span class="s2">&quot;rock&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#rock1-p&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;border-p&#39;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">disableButtons</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">updateComputer</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">determineWinner</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paper&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+</span><span class='line'>      <span class="nx">updatePlayer</span><span class="p">(</span><span class="s2">&quot;paper&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paper1-p&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;border-p&#39;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">disableButtons</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">updateComputer</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">determineWinner</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#scissors&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+</span><span class='line'>      <span class="nx">updatePlayer</span><span class="p">(</span><span class="s2">&quot;scissors&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#scissors1-p&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;border-p&#39;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">disableButtons</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">updateComputer</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">determineWinner</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#play-again&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">clearButtons</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">enableButtons</span><span class="p">();</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#who-won&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;again&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Pick Again!&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Based on which button the player picks, a series of events occur. I know what you&rsquo;re thinking. There&rsquo;s this whole concept of DRY (Don&rsquo;t Repeat Yourself) in programming&hellip;and you&rsquo;re right. I&rsquo;m absolutely positive there&rsquo;s a better way of doing it &ndash; I just couldn&rsquo;t see a solution for it today. Maybe tomorrow.</p>
+
+<p>The cool thing about the program is that I reset the game without refreshing the page so that means there&rsquo;s a lot of potential for going further with the program. I&rsquo;m seeing a score tracker in the future!</p>
+
+<p>All in all, this was a very fun way to review JavaScript basics and I really like the end product. But, as always, I&rsquo;ve got plans for improvement! I&rsquo;ll keep you updated on my revisions.</p>
+
+<p>For now, I must go to sleep. Tomorrow is the start of a new week!</p>
+
+<p><img src="images/dog.jpg" alt="Cute Dog Picture" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Day 1: The Adventure Begins!]]></title>
