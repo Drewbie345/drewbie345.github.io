@@ -4,7 +4,7 @@
   <title><![CDATA[Fat Cat Studio]]></title>
   <link href="http://Drewbie345.github.io/atom.xml" rel="self"/>
   <link href="http://Drewbie345.github.io/"/>
-  <updated>2014-02-09T22:16:49-06:00</updated>
+  <updated>2014-03-04T10:45:44-06:00</updated>
   <id>http://Drewbie345.github.io/</id>
   <author>
     <name><![CDATA[Drew Robinson]]></name>
@@ -12,6 +12,156 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Playing With Snappy Graphics]]></title>
+    <link href="http://Drewbie345.github.io/blog/2014/03/04/playing-with-snappy-graphics/"/>
+    <updated>2014-03-04T08:26:55-06:00</updated>
+    <id>http://Drewbie345.github.io/blog/2014/03/04/playing-with-snappy-graphics</id>
+    <content type="html"><![CDATA[<h2>Working with SVGs</h2>
+
+<p>So it&rsquo;s been a few weeks since I have been able to sit down to work on my blog&hellip;but my brain is so full of new ideas that I just have to share a few of the things I&rsquo;ve been learning.</p>
+
+<p>I&rsquo;m really enjoying working with JavaScript. It&rsquo;s a very powerful language all on its own but when you add a few libraries in, Javascript becomes the all powerful, all knowing wizard of Oz.</p>
+
+<p>What&rsquo;s a JavaScript library? Glad you asked. Libraries are collections of pre-written JavaScript code which you can use to help make your awesome stuff more awesome. Libraries can help you accomplish a wide range of tasks from building forms to animation, from building graphs to displaying interactive maps and more. There are hundreds of libraries &ndash; with more being written each day. A great resource to look at is <a href="http://www.jsdb.io/">JSDB</a> which has different category lists of JavaScript libraries.</p>
+
+<p>My favorite library is definitely JQuery because it makes working with the DOM (the Document Object Model, i.e. the actual elements on your webpage) so easy. However, in the last two weeks, I&rsquo;ve been spending more and more time playing with SVG libraries.</p>
+
+<p>SVG? Gotta love those acronyms! SVG stand for scalable vector graphics. That cleared it up for you, right? Ha. Let&rsquo;s break it down. SVGs are like special images (<em>graphics</em>) that can shrink and expand (<em>scalable</em>) and don&rsquo;t pixelate (they don&rsquo;t get blurry, i.e <em>vectors</em>). You may have created SVGs in programs like Adobe Illustrator or the open-source Inkscape, but did you know you can make SVGs by writing actual code? Take a look below.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;svg</span> <span class="na">height=</span><span class="s">&quot;100&quot;</span> <span class="na">width=</span><span class="s">&quot;100&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">&quot;50&quot;</span> <span class="na">cy=</span><span class="s">&quot;50&quot;</span> <span class="na">r=</span><span class="s">&quot;40&quot;</span> <span class="na">stroke=</span><span class="s">&quot;black&quot;</span> <span class="na">stroke-width=</span><span class="s">&quot;3&quot;</span> <span class="na">fill=</span><span class="s">&quot;red&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>  Sorry, your browser does not support inline SVG.
+</span><span class='line'><span class="nt">&lt;/svg&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So what&rsquo;s happening in this snippet? We define an <code>&lt;svg&gt;</code> element that is 100 pixels wide and 100 pixels tall. Then we create a circle with a center point of (50, 50) and a radius of 40 pixels. We also add a message for the poor souls who are using antiquated browsers &ndash; telling them what they are missing out on. And the result&hellip;</p>
+
+<p data-height="268" data-theme-id="0" data-slug-hash="yoEKh" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/drewbie/pen/yoEKh'>yoEKh</a> by Drew Robinson (<a href='http://codepen.io/drewbie'>@drewbie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<script async src="http://Drewbie345.github.io//codepen.io/assets/embed/ei.js"></script>
+
+
+<p>I know what you are thinking&hellip;That&rsquo;s a lot of code for a little circle. What if I wanted multiple circles?? Which brings me to my original topic. JavaScript libraries. There are actually JS libraries that help you easily create SVG elements! Let&rsquo;s look at one.</p>
+
+<p><img src="images/snap-svg.png" alt="Snap SVG" /></p>
+
+<p><a href="http://snapsvg.io/">Snap SVG</a> is a great library that easy enough for beginners to use and powerful enough for advanced developers to enjoy.</p>
+
+<p>Getting started is a snap. Download the code from the site and set up your index.html page with a script tag in the body of your html.</p>
+
+<p><code>&lt;script type="text/javascript" src="lib/snap.svg-min.js"&gt;&lt;/script&gt;</code></p>
+
+<p>Next add an SVG element to your html. You can also create it with JavaScript if you prefer.</p>
+
+<p><code>&lt;svg id="svg1" width="400" height="400"&gt;&lt;/svg&gt;</code></p>
+
+<p>In your JavaScript file, add the following code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nx">Snap</span><span class="p">(</span><span class="s1">&#39;#svg1&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">smallCircle</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+</span><span class='line'><span class="nx">smallCircle</span><span class="p">.</span><span class="nx">attr</span><span class="p">({</span>
+</span><span class='line'>    <span class="nx">fill</span><span class="o">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">stroke</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">strokeWidth</span><span class="o">:</span> <span class="mi">5</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p data-height="268" data-theme-id="0" data-slug-hash="wvbgp" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/drewbie/pen/wvbgp'>wvbgp</a> by Drew Robinson (<a href='http://codepen.io/drewbie'>@drewbie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<script async src="http://Drewbie345.github.io//codepen.io/assets/embed/ei.js"></script>
+
+
+<p>Cool, right? Snap makes SVGs easier and your code more readable. We create a circle with <code>canvas.circle(x, y, r)</code> and then we change the circle&rsquo;s attributes with <code>.attr()</code>.</p>
+
+<p>Okay, so, we created a circle again. What makes using JavaScript any better than just writing it out with HTML?</p>
+
+<p>Well, for starters, you have a lot more options with what you can do with the circle. How about moving the circle around? Totally doable.</p>
+
+<p>Add the following line below your circle code:</p>
+
+<p><code>smallCircle.drag();</code></p>
+
+<p>Now trying dragging the circle around the screen. Nice, huh? You can also try it out in the embedded codepen above on the page.</p>
+
+<p>Still not convinced? You want more? Alright, check this out.</p>
+
+<p data-height="268" data-theme-id="0" data-slug-hash="AqiBE" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/drewbie/pen/AqiBE'>AqiBE</a> by Drew Robinson (<a href='http://codepen.io/drewbie'>@drewbie</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<script async src="http://Drewbie345.github.io//codepen.io/assets/embed/ei.js"></script>
+
+
+<p>Such pretty colors! Try dragging the circles around. Fun! Re-run the codepen and you get more pretty colors! Check out the code&hellip;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nx">Snap</span><span class="p">(</span><span class="s1">&#39;#svg1&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">randInt</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">minVal</span><span class="p">,</span> <span class="nx">maxVal</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">rInt</span> <span class="o">=</span> <span class="nx">minVal</span> <span class="o">+</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">maxVal</span> <span class="o">-</span> <span class="nx">minVal</span><span class="p">));</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">rInt</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">400</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">red</span> <span class="o">=</span> <span class="nx">randInt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">green</span> <span class="o">=</span> <span class="nx">randInt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">blue</span> <span class="o">=</span> <span class="nx">randInt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">circle</span><span class="p">.</span><span class="nx">drag</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">circle</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="s1">&#39;rgb(&#39;</span> <span class="o">+</span> <span class="nx">red</span> <span class="o">+</span><span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">green</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">blue</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I use a loop to create multiple circles dynamically with Javascript. I changed the x value of each circle I created so that it doesn&rsquo;t sit on top of its neighbor. If I was using HTML, I would have to write out the circle code four times. Using JavaScript and Snap SVG, I can simply use a for loop.</p>
+
+<p>And the pretty random colors? I use <code>randInt()</code> to create random numbers. The function takes a range of numbers and returns a random number in that range. Then I use the fill attribute to create a random rgb color to apply to each circle created in the loop.</p>
+
+<p>Snap does a lot more than just pretty circles. If you&rsquo;re interested, I encourage you to check out the documentation and start experimenting. I&rsquo;ve embarked on a project to build the game Battleship, ehm, I mean BattleDrones, and I&rsquo;m using Snap to create my game boards and ships. Snap is making things a lot easier&hellip;it has ways of checking if elements are overlapping and other helpful methods that make a game easier to design.</p>
+
+<p>I&rsquo;ll be writing about my experience creating Battleship soon, so stay tuned!</p>
+
+<p><img src="images/catRoll.jpg" alt="cute cat picture" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Week 1 Wrap-Up!]]></title>
