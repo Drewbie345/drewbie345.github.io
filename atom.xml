@@ -4,7 +4,7 @@
   <title><![CDATA[Fat Cat Studio]]></title>
   <link href="http://Drewbie345.github.io/atom.xml" rel="self"/>
   <link href="http://Drewbie345.github.io/"/>
-  <updated>2014-03-05T11:55:30-06:00</updated>
+  <updated>2014-03-23T12:43:37-05:00</updated>
   <id>http://Drewbie345.github.io/</id>
   <author>
     <name><![CDATA[Drew Robinson]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The iPad, Programming, and Kids]]></title>
+    <link href="http://Drewbie345.github.io/blog/2014/03/23/the-ipad-programming-and-kids/"/>
+    <updated>2014-03-23T11:17:09-05:00</updated>
+    <id>http://Drewbie345.github.io/blog/2014/03/23/the-ipad-programming-and-kids</id>
+    <content type="html"><![CDATA[<h2>Making the Most of the iPad</h2>
+
+<p>How often have you gone to dinner and the kid at the next table is watching cartoons on the iPad while the adults chat? The iPad has become the essential take-along babysitter.</p>
+
+<p>And why not? The different ways you can use an iPad have grown over the years since it was introduced. But one thing is clear, the design of the iPad is super kid friendly.</p>
+
+<p>But lately, I&rsquo;ve been looking at the iPad to do more than just distract a kid. More than just keep a kid entertained. To me, the iPad has a lot of potential to help a child learn.</p>
+
+<p>And one way the iPad is helping kids to learn is by teaching them to code.</p>
+
+<p>Why teach code to kids? As the world changes and technology becomes more essential, it&rsquo;s no longer enough to know how to use technology &ndash; a person must be able to produce with technology.</p>
+
+<p>But at what age do you start teaching code? We know that <a href="http://ecap.crc.illinois.edu/pubs/katzsym/clark-b.html">children under the age of 7 acquire foreign languages extremely rapidly.</a> So why not computer languages?</p>
+
+<p>Rather than focusing on a specific language&rsquo;s syntax, many of the tools available for kids focus on concepts. By teaching kids to think logically at a younger age, they will be ready to learn the syntax later on life. And even if they don&rsquo;t continue into a programming career, the critical thinking and problem solving gained from learning programming will be invaluable.</p>
+
+<p><img src="images/hopscotch.png" alt="Hopscotch Screenshot" /></p>
+
+<p>The iPad is an ideal learning platform for younger kids. The touch screen removes the need for knowledge about the keyboard. It&rsquo;s also visual which appeals to all kids. One of my favorite apps for teaching code is <a href="https://www.gethopscotch.com/">Hopscotch</a>. It uses a drag and drop approach to create basic programs that make cute creatures move around the screen. Using trial and error, and constant iteration, kids discover how to manipulate the code and think critically and creatively. There&rsquo;s also a share function that allows kids to work individually or in cooperation with other kids. With this app, kids gain understanding of programming, math and art.</p>
+
+<iframe width="560" height="315" src="http://Drewbie345.github.io//www.youtube.com/embed/uB3tgpbIwJE?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+<p>There are more apps for teaching programming on iPads and other tablets. Check out this <a href="http://ukedchat.com/2013/12/09/coding-on-tablets/">article</a> for more apps.</p>
+
+<p>If you&rsquo;re a parent or a teacher that uses iPads with kids, consider downloading an educational app for the next time you go out to dinner!</p>
+
+<p><img src="images/onefish.jpg" alt="One Fish Cat" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Coding With Kids]]></title>
